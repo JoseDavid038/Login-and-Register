@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- pongo la propiedad defer para que el script se cargue despues del body -->
+    <script src="register.js" defer></script>
+  </head>
+  <body>
+    <main class="login-codesquad">
+
+      <div class="white-side">
+        <h2 class="title-section-register">Crear cuenta</h2>
+        <p class="description-login">Crea tu cuenta para acceder al espacio de Desarrolladores SENA</p>
+        <div>
+          <form id="register-form">
+            <label for="user" class="sr-only">Nombre</label>
+            <input type="text" name="user" id="user" placeholder="Nombre">
+            <label for="email" class="sr-only">Usuario</label>
+            <input type="email" name="email" id="email" placeholder="Correo electronico">
+            <label for="password" class="sr-only">Contraseña</label>
+            <input type="password" name="password" id="password" placeholder="Contraseña">
+            <label for="phone" class="sr-only">Teléfono</label>
+            <input type="text" name="phone" id="phone" placeholder="Número de teléfono">
+            <div class="checkbox-politicas">
+              <label for="politicas" class="sr-only">Nombre</label>
+              <input type="checkbox" politicas="politicas" id="politicas" placeholder="Nombre">
+              <p>Acepto y autorizo términos y condiciones las políticas de privacidad y política de tratamiento de datos personales.</p>
+            </div>
+            <button type="submit">Registrarme</button>
+            <p class="error oculto">Error al Registrarse</p>
+          </form>
+          <p>¿Ya tienes una cuenta? - <a href="/">Inicia Sesión</a></p>
+        </div>
+      </div>
+
+      <div class="black-side">
+        
+        <div class="black-side-logo">
+          <img class="logo-login" src="/assets/images/logo_codeSquad.png" alt="">
+          <p>GRUPO GAES</p>
+        </div>
+      </div>
+     
+
+
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

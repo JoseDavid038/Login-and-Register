@@ -6,8 +6,13 @@ dotenv.config();
 
 function soloAdmin(req,res,next){
   const logueado = revisarCookie(req);
-  if (logueado) return next();
-  return res.redirect("/")
+  if (logueado) {
+    return next();
+    //return res.redirect("/")
+  }else {
+    return res.status(401).send({ status: "Error", message: "Para acceder a este recurso debe iniciar sesión" });
+  }
+  
 }
 
 

@@ -30,7 +30,7 @@ async function login(req,res){
   }
   const usuarioARevisar = usuarios.find(usuario => usuario.email === email);
   if (!usuarioARevisar){
-    return res.status(400).send({status:"Error",message:"Error durante el login"})
+    return res.status(400).send({status:"Error",message:"Error credenciales incorrectas"})
   }
   // aca vamos a revisar que la contraseña hasheada coincida con la ingresada.
   const loginCorrecto = await bcryptjs.compare(password,usuarioARevisar.password);
@@ -54,6 +54,8 @@ async function login(req,res){
 }
 
 async function register(req,res){
+
+  console.log('Request body',req.body); // Esto imprimirá el cuerpo de la solicitud
   
   const user = req.body.user;
   const email = req.body.email;
@@ -72,10 +74,10 @@ async function register(req,res){
   const nuevoUsuario = {
     user, email, password: hashPassword, phone
   }
-  console.log(nuevoUsuario);
+  // console.log(nuevoUsuario);
   usuarios.push(nuevoUsuario);
-  console.log(usuarios);
-   return res.status(201).send({status:"ok",message:`Usuario ${nuevoUsuario.user} Agregado`,redirect:"/"})
+  // console.log(usuarios);
+  return res.status(201).send({status:"ok",message:`Usuario ${nuevoUsuario.user} Agregado`,redirect:"/"})
 }
 
 export const methods = {

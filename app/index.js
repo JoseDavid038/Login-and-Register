@@ -32,10 +32,11 @@ const server = app.listen(app.get("port"), () => {
 app.use(express.static(__dirname + "/public"));
 // tengo que configurar express para que lea json.
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 //Rutas
-//Vamos a hacer un getpoint al get. 
+//endpoints.
 app.get("/",authorization.soloPublico, (req,res)=> res.sendFile(__dirname + "/pages/login.html"));
 app.get("/register",authorization.soloPublico,(req,res)=> res.sendFile(__dirname + "/pages/register.html"));
 app.get("/admin",authorization.soloAdmin, (req,res)=> res.sendFile(__dirname + "/pages/admin/admin.html"));
